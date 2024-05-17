@@ -1,0 +1,5 @@
+{
+  "editor.acceptSuggestionOnEnter": "off",
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false,
+  "colorize.languages": ["typescript", "javascript", "css", "scss"]
+}
