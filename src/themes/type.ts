@@ -3,6 +3,7 @@ export type ColorTheme = {
   lightPrimary: string;
   accent: string;
   text: string;
+  lightText: string;
   background: string;
   footer: string;
   secondary: string;

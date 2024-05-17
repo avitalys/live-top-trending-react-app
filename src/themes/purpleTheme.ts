@@ -5,6 +5,7 @@ const purpleTheme: ColorTheme = {
   lightPrimary: "#835acb",
   accent: "#ff9800", // Orange
   text: "#333333", // Dark Grey
+  lightText: "#ffffff", // White
   background: "#f5f5f5", // Light Grey
   footer: "#212121", // Dark Grey
   secondary: "#757575", // Grey

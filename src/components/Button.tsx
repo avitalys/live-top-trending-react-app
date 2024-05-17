@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { ColorTheme } from "../themes/type";
 
-export const Button = styled.button<{ $primary?: boolean; theme: ColorTheme }>`
+const Button = styled.button<{ $primary?: boolean; theme: ColorTheme }>`
   background: transparent;
   border-radius: 3px;
   border: 2px solid ${(props) => props.theme.primary};
@@ -16,3 +16,5 @@ export const Button = styled.button<{ $primary?: boolean; theme: ColorTheme }>`
       color: white;
     `};
 `;
+
+export default Button;
