@@ -18,7 +18,7 @@ const Navigator = ({ title, links }: INavProps) => {
       <h1>{title}</h1>
       <Links>
         {links.map((link) => {
-          return <HeaderLink text={link.text} url={link.url} />;
+          return <HeaderLink text={link.text} url={link.url} key={link.text} />;
         })}
       </Links>
     </NavContainer>
