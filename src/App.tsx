@@ -4,6 +4,7 @@ import "./styles.css";
 import { ThemeProvider } from "styled-components";
 import themes from "./themes";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -39,9 +40,9 @@ function App() {
         </div>
       </div>
 
-      <footer>
+      <Footer>
         <p>&copy; 2024 avitalys/Live-Top-Trending App. All rights reserved.</p>
-      </footer>
+      </Footer>
     </ThemeProvider>
   );
 }
