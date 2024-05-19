@@ -40,6 +40,12 @@ const Time = styled.time<{ $primary?: boolean; theme: ColorTheme }>`
     color: #666;
 }`;
 
+const Image = styled.img`
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+`;
+
 interface CardProps {
   title: string;
   image: string;
@@ -52,7 +58,9 @@ const Card = (props: CardProps) => {
   return (
     <Container>
       <ImageWrapper>
-        <img src={props.image} alt="Vite logo" />
+        {props.image.length > 0 && (
+          <Image src={props.image} alt="article image" />
+        )}
       </ImageWrapper>
       <ContentWrapper>
         <Title>{props.title}</Title>
