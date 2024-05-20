@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ColorTheme } from "../themes/type";
+import dayjs from "dayjs";
 
 const Container = styled.div<{ $primary?: boolean; theme: ColorTheme }>`
     display: 'flex';
@@ -66,7 +67,11 @@ const Card = (props: CardProps) => {
         <Title>{props.title}</Title>
         <p>{props.source}</p>
         <Link href={props.url}>Read more</Link>
-        {props.time && <Time dateTime={props.time}>{props.time}</Time>}
+        {props.time && (
+          <Time dateTime={props.time}>
+            {dayjs(props.time).format("DD MMMM YYYY, HH:mm")}
+          </Time>
+        )}
       </ContentWrapper>
     </Container>
   );
