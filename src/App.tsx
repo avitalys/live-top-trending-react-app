@@ -1,12 +1,11 @@
 import { useState } from "react";
 import Button from "./components/Button";
-import "./styles.css";
-import { ThemeProvider } from "styled-components";
-import themes from "./themes";
+import "./App.scss";
 // import Header from "./components/Header";
 
 function App() {
   const [count, setCount] = useState(0);
+  const user = { firstName: "Jane", lastName: "Austen" };
 
   interface Person {
     firstName: string;
@@ -17,17 +16,23 @@ function App() {
     return "Hello, " + person.firstName;
   }
 
-  const user = { firstName: "Jane", lastName: "Austen" };
+  const handleClick = () => {
+    console.log("Button clicked!");
+  };
 
   return (
-    <ThemeProvider theme={themes.purple}>
+    <>
       <h3>{greeter(user)}</h3>
-      <div className="card">
-        <Button $primary onClick={() => setCount((count) => count + 1)}>
+      <div>
+        <h1>My React App</h1>
+        <Button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </Button>
+        <Button primary onClick={handleClick}>
+          Primary Button
+        </Button>
       </div>
-    </ThemeProvider>
+    </>
   );
 }
 
