@@ -1,9 +1,11 @@
 // Button.scss
+@use "../../styles/colors.scss" as *;
 
 .btn {
-  background-color: #007bff; /* Blue */
-  border: none;
-  color: white;
+  background-color: $background;
+  border: 3px solid $primary;
+  color: $primary;
+  margin: 12px 6px;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -14,14 +16,15 @@
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #0056b3; /* Darker blue */
+    background-color: $secondary;
   }
 }
 
 .btn-primary {
-  background-color: #28a745; /* Green */
+  background-color: $primary;
+  color: $lightText;
 
   &:hover {
-    background-color: #218838; /* Darker green */
+    background-color: $lightPrimary;
   }
 }
