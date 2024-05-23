@@ -31,6 +31,12 @@ function App() {
         <Button primary onClick={handleClick}>
           Primary Button
         </Button>
+        <Button primary outline onClick={handleClick}>
+          Primary outline Button
+        </Button>
+        <Button disabled onClick={handleClick}>
+          Disabled
+        </Button>
       </div>
     </>
   );

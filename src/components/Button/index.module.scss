@@ -2,9 +2,9 @@
 @use "../../styles/colors.scss" as *;
 
 .btn {
-  background-color: $background;
-  border: 3px solid $primary;
-  color: $primary;
+  background-color: $lightPrimary;
+  border: 1px solid;
+  color: $lightText;
   margin: 12px 6px;
   padding: 10px 20px;
   text-align: center;
@@ -16,7 +16,7 @@
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: $secondary;
+    background-color: $lightPrimary;
   }
 }
 
@@ -26,5 +26,25 @@
 
   &:hover {
     background-color: $lightPrimary;
+  }
+}
+
+.btn-outline {
+  background-color: $background;
+  border: 2px solid $primary;
+  color: $text;
+
+  &:hover {
+    background-color: $lightPrimary;
+  }
+}
+
+button[disabled] {
+  background-color: $disabled;
+  color: $disabledText;
+  cursor: not-allowed;
+
+  &:hover {
+    background-color: $disabled;
   }
 }
