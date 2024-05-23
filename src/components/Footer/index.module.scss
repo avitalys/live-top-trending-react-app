@@ -1,0 +1,13 @@
+// Footer.scss
+@use "../../styles/colors.scss" as *;
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+
+  position: relative;
+  bottom: -50;
+  width: 100%;
+}
