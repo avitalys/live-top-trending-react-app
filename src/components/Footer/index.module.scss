@@ -2,8 +2,8 @@
 @use "../../styles/colors.scss" as *;
 
 footer {
-  background-color: #333;
-  color: #fff;
+  background-color: $footer;
+  color: $lightText;
   padding: 20px;
   text-align: center;
 
