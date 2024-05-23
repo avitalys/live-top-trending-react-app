@@ -1,0 +1,103 @@
+// NavBar.scss
+@use "../../styles/colors.scss" as *;
+
+// Variables
+$navbar-bg-color: $primary; // Background color of the navbar
+$navbar-text-color: $lightText; // Text color of the navbar
+$navbar-link-color: #fff; // Link color of navbar items
+$navbar-link-hover-color: #ccc; // Hover color of navbar items
+$navbar-hamburger-color: #fff; // Color of hamburger menu icon
+
+// Navbar styles
+.navbar {
+  background-color: $navbar-bg-color;
+  color: $navbar-text-color;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  // Navbar items
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    // Individual navbar links
+    li {
+      color: $navbar-link-color;
+      text-decoration: none;
+      margin: 0 14px;
+
+      &:hover {
+        color: $navbar-link-hover-color;
+      }
+    }
+
+    // Media query for smaller screens
+    @media (max-width: 768px) {
+      // Show hamburger menu and hide navbar items
+      .navbar-items {
+        display: none;
+      }
+    }
+  }
+
+  // Logo and brand name
+  .logo {
+    display: flex;
+    align-items: center;
+
+    // Logo image
+    .logo-image {
+      width: 40px; // Adjust size as needed
+      height: auto;
+      margin-right: 10px; // Adjust spacing as needed
+    }
+
+    // Brand name
+    .brand-name {
+      font-size: 1.3rem; // Adjust font size as needed
+      font-weight: bold;
+      margin-left: auto;
+    }
+  }
+
+  // Hamburger menu
+  .hamburger-menu {
+    display: none; // Hide by default for larger screens
+
+    // Styling for the hamburger icon
+    .icon {
+      color: $navbar-hamburger-color;
+      font-size: 2rem; // Adjust size as needed
+      cursor: pointer;
+    }
+  }
+
+  // Media query for smaller screens
+  @media (max-width: 768px) {
+    .hamburger-menu {
+      display: block; // Show hamburger menu
+    }
+  }
+}
+
+.navbar-outline {
+  background-color: $navbar-text-color;
+  color: $navbar-bg-color;
+  border: 3px solid $navbar-bg-color;
+
+  ul li,
+  ul a {
+    color: $navbar-bg-color;
+  }
+  .hamburger-menu .icon {
+    color: $navbar-bg-color;
+  }
+}
