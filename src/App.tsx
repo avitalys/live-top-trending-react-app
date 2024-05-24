@@ -4,7 +4,7 @@ import Button from "./components/Button";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ScrollMenu from "./components/ScrollMenu";
-import { brand, navBarItems } from "./consts";
+import { brand, navBarItems, catogeries } from "./consts";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -21,6 +21,10 @@ function App() {
 
   const handleClick = () => {
     console.log("Button clicked!");
+  };
+
+  const onCategoryChanged = (category: string) => {
+    console.log(category);
   };
 
   return (
@@ -46,7 +50,10 @@ function App() {
           </div>
 
           <div>
-            <ScrollMenu />
+            <ScrollMenu
+              menuItems={catogeries}
+              onMenuItemSelected={onCategoryChanged}
+            />
           </div>
         </div>
 

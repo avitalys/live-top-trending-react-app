@@ -1,14 +1,26 @@
 import { useState } from "react";
 import classNames from "classnames";
 import styles from "./index.module.scss";
-import { catogeries } from "../../consts";
 
-const ScrollMenu = () => {
-  const [selected, setSelected] = useState("Buisness");
+export interface IScrollMenuProps<T> {
+  menuItems: Array<T>;
+  onMenuItemSelected: (arg: T) => void;
+}
+
+const ScrollMenu = ({
+  menuItems,
+  onMenuItemSelected,
+}: IScrollMenuProps<string>) => {
+  const [selected, setSelected] = useState(menuItems[0]);
+
+  const onClickHnadler = (item: string) => {
+    setSelected(item);
+    onMenuItemSelected(item);
+  };
 
   return (
     <div className={styles["scrollmenu"]}>
-      {catogeries.map((item, index) => {
+      {menuItems.map((item, index) => {
         const selectedClass = classNames({
           [styles["selected"]]: item === selected,
         });
@@ -17,7 +29,7 @@ const ScrollMenu = () => {
             tabIndex={index}
             key={item}
             className={selectedClass}
-            onClick={() => setSelected(item)}
+            onClick={() => onClickHnadler(item)}
           >
             {item}
           </button>
