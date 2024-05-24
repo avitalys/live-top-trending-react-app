@@ -3,6 +3,7 @@ import "./App.scss";
 import Button from "./components/Button";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import ScrollMenu from "./components/ScrollMenu";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -53,6 +54,10 @@ function App() {
             <Button disabled onClick={handleClick}>
               Disabled
             </Button>
+          </div>
+
+          <div>
+            <ScrollMenu />
           </div>
         </div>
 
