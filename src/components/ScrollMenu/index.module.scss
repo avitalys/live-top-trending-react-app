@@ -3,17 +3,19 @@
   overflow: auto;
   white-space: nowrap;
   display: flex;
-  justify-content: space-between;
-  align-items: right;
-  list-style-type: none;
+  justify-content: center;
+  align-items: center;
   overflow-x: visible;
 
-  div {
+  button {
     display: inline-block;
+    border: none;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
     color: white;
     text-align: center;
     padding: 14px;
-    text-decoration: none;
 
     &:hover {
       background-color: #777;

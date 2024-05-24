@@ -4,6 +4,7 @@ import Button from "./components/Button";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import ScrollMenu from "./components/ScrollMenu";
+import { brand, navBarItems } from "./consts";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -22,22 +23,10 @@ function App() {
     console.log("Button clicked!");
   };
 
-  const brand = {
-    title: "Trendy Meter",
-    image: "/vite.svg",
-    href: "google.com",
-  };
-
-  const items = [
-    { text: "Home", href: "#" },
-    { text: "About", href: "#" },
-    { text: "Contact", href: "#" },
-  ];
-
   return (
     <>
       <div className="wrapper">
-        <NavBar outline items={items} brand={brand} />
+        <NavBar outline items={navBarItems} brand={brand} />
         <div className="content">
           <h3>{greeter(user)}</h3>
           <div>

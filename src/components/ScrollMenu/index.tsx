@@ -1,21 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import classNames from "classnames";
 import styles from "./index.module.scss";
-
-const catogeries = [
-  "Buisness",
-  "Culture",
-  "Enviornment",
-  "Food",
-  "Games",
-  "Health",
-  "Music",
-  "Science",
-  "Sport",
-  "Style",
-  "Technology",
-  "Travel",
-];
+import { catogeries } from "../../consts";
 
 const ScrollMenu = () => {
   const [selected, setSelected] = useState("Buisness");
@@ -27,16 +13,14 @@ const ScrollMenu = () => {
           [styles["selected"]]: item === selected,
         });
         return (
-          // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-          <div
-            role="button"
+          <button
             tabIndex={index}
             key={item}
             className={selectedClass}
             onClick={() => setSelected(item)}
           >
             {item}
-          </div>
+          </button>
         );
       })}
     </div>
