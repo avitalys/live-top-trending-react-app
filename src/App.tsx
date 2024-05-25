@@ -5,6 +5,8 @@ import {
   Routes,
   Link,
 } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import { brand } from "./consts";
@@ -12,9 +14,11 @@ import Home from "./pages/Home";
 import Design from "./pages/Design";
 import "./App.scss";
 
+const queryClient = new QueryClient();
+
 function App() {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <Router>
         <div className="wrapper">
           <NavBar brand={brand}>
@@ -36,7 +40,11 @@ function App() {
           </Footer>
         </div>
       </Router>
-    </>
+      <ReactQueryDevtools
+        initialIsOpen={false}
+        buttonPosition={"bottom-right"}
+      />
+    </QueryClientProvider>
   );
 }
 
