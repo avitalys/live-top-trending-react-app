@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import classNames from "classnames";
 import styles from "./index.module.scss";
 import NavItem, { INavItemProps } from "./NavItem";
@@ -6,8 +6,9 @@ import NavItem, { INavItemProps } from "./NavItem";
 
 export interface INavBarProps {
   brand: INavBarBrand;
-  items: Array<INavItemProps>;
+  items?: Array<INavItemProps>;
   outline?: boolean;
+  children?: ReactNode;
 }
 
 export interface INavBarBrand {
@@ -16,7 +17,7 @@ export interface INavBarBrand {
   image?: string;
 }
 
-const NavBar = ({ brand, items, outline }: INavBarProps) => {
+const NavBar = ({ brand, items, outline, children }: INavBarProps) => {
   const buttonClasses = classNames(styles["navbar"], {
     [styles["navbar-outline"]]: outline,
   });
@@ -35,10 +36,13 @@ const NavBar = ({ brand, items, outline }: INavBarProps) => {
           <h1 className={styles["brand-name"]}>{brand.title}</h1>
         </div>
         <ul>
-          {items.map((item) => {
+          {items?.map((item) => {
             return (
               <NavItem text={item.text} href={item.href} key={item.text} />
             );
+          })}
+          {children?.map((child, index) => {
+            return <NavItem key={`navbar-child-${index}`}>{child}</NavItem>;
           })}
         </ul>
 
