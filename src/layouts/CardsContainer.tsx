@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import Card from "../components/Card";
 
 export interface INewsData {
   title: string;
@@ -21,6 +22,7 @@ const CardsContainer = ({ category = "Technology" }) => {
   const { isLoading, data, isError, error } = useQuery({
     queryKey: ["news", category],
     queryFn: () => getNews(category),
+    staleTime: 10 * 60 * 1000, // 10 minutes
   });
 
   if (isLoading) return "Loading...";
@@ -32,7 +34,7 @@ const CardsContainer = ({ category = "Technology" }) => {
       <div>{category}</div>
       <div className="content">
         {data?.map((item) => {
-          return <div key={item.title.slice(0, 10)}>{item.title}</div>;
+          return <Card {...item} key={item.title.slice(0, 10)} />;
         })}
       </div>
     </>
