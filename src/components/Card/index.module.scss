@@ -1,6 +1,7 @@
 // Card.scss
 @use "../../styles/colors.scss" as *;
 @use "../../styles/mixins.scss" as *;
+@use "../../styles/shadows" as *;
 
 .article-card {
   display: "flex";
