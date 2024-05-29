@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./index.module.scss";
 import dayjs from "dayjs";
-import { INewsData } from "../../layouts/CardsContainer";
+import styles from "./index.module.scss";
+import { INewsData } from "../../interfaces";
 
 interface ICardProps extends INewsData {
   onClick?: () => void; // Declaring the onClick handler type

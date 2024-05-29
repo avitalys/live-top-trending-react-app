@@ -1,11 +1,5 @@
-import { ReactNode } from "react";
+import { INavItemProps } from "../../interfaces";
 import styles from "./index.module.scss";
-
-export interface INavItemProps {
-  text?: string;
-  href?: string;
-  children?: ReactNode;
-}
 
 function NavItem({ text, href, children }: INavItemProps) {
   return (

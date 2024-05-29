@@ -1,28 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import Card from "../../components/Card";
 import styles from "./index.module.scss";
+import { getNews } from "../../api/news";
 
-export interface INewsData {
-  title: string;
-  image: string;
-  url: string;
-  source: string;
-  time: string;
-}
-//
-const getNews = (category = "Technology", count = 5): Promise<INewsData[]> => {
-  return axios
-    .get<INewsData[]>(
-      `http://localhost:8000/news/${category.toLowerCase()}/${count}`
-    )
-    .then((res) => res.data);
-};
-
-const CardsContainer = ({ category = "Technology" }) => {
+const CardsContainer = ({ category = "Technology", count = 5 }) => {
   const { isLoading, data, isError, error } = useQuery({
-    queryKey: ["news", category],
-    queryFn: () => getNews(category),
+    queryKey: ["news", category, count],
+    queryFn: () => getNews(category, count),
     staleTime: 10 * 60 * 1000, // 10 minutes
   });
 
