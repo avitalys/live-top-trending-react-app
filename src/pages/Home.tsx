@@ -24,12 +24,15 @@ const Home = () => {
   return (
     <>
       <div>
-        <h2>{greeter(user)}</h2>
-        <h1>
+        <h2>
           <p>Select your interest - </p>
           <p>dive into the latest!</p>
-        </h1>
-        <h3>Choose what you want to read:</h3>
+        </h2>
+
+        <h3>
+          <p>{greeter(user)}</p>
+          <p>Choose what you want to read:</p>
+        </h3>
 
         <ScrollMenu
           menuItems={catogeries}
