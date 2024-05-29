@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import Card from "../components/Card";
+import Card from "../../components/Card";
+import styles from "./index.module.scss";
 
 export interface INewsData {
   title: string;
@@ -32,7 +33,7 @@ const CardsContainer = ({ category = "Technology" }) => {
   return (
     <>
       <div>{category}</div>
-      <div>
+      <div className={styles["container"]}>
         {data?.map((item) => {
           return <Card {...item} key={item.title.slice(0, 10)} />;
         })}

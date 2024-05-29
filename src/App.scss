@@ -1,3 +1,5 @@
+@use "./styles/mixins" as *;
+
 #root {
   margin: 0;
   padding: 0;
@@ -17,4 +19,11 @@
 
 .content {
   padding: 20px;
+}
+
+h1 p {
+  @include medium {
+    display: inline-block;
+    white-space: pre;
+  }
 }

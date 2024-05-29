@@ -1,5 +1,6 @@
 // Card.scss
 @use "../../styles/colors.scss" as *;
+@use "../../styles/mixins.scss" as *;
 
 .article-card {
   display: "flex";
@@ -26,7 +27,7 @@
   a {
     display: block;
     margin-bottom: 16px;
-    color: blue;
+    color: $link;
     text-decoration: none;
   }
 
@@ -37,8 +38,20 @@
 
   img {
     object-fit: cover;
-    height: 200px;
+    height: auto;
     width: 100%;
+
+    @include small {
+      max-height: 200px;
+    }
+
+    @include medium {
+      max-height: 280px;
+    }
+
+    @include large {
+      max-height: 440px;
+    }
   }
 
   time {

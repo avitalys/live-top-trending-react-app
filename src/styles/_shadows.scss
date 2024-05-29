@@ -4,3 +4,6 @@
 @mixin small-shadow {
   box-shadow: 5px 5px 5px $footer;
 }
+@mixin card-shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

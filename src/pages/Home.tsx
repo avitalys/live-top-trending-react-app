@@ -1,7 +1,7 @@
 import ScrollMenu from "./../components/ScrollMenu";
 import { catogeries } from "./../consts";
 import { useState } from "react";
-import CardsContainer from "../layouts/CardsContainer";
+import CardsContainer from "./../layouts/CardsContainer";
 
 const user = { firstName: "Jane", lastName: "Austen" };
 
@@ -26,7 +26,7 @@ const Home = () => {
       <div>
         <h2>{greeter(user)}</h2>
         <h1>
-          <p>Select your interest – </p>
+          <p>Select your interest - </p>
           <p>dive into the latest!</p>
         </h1>
         <h3>Choose what you want to read:</h3>
