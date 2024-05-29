@@ -34,9 +34,8 @@ function App() {
           <Outlet />
 
           <Footer>
-            <p>
-              &copy; 2024 avitalys/Live-Top-Trending App. All rights reserved.
-            </p>
+            <p>&copy; 2024 avitalys/Live-Top-Trending App.</p>
+            <p>All rights reserved.</p>
           </Footer>
         </div>
       </Router>

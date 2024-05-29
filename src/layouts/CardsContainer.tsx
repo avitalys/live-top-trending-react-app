@@ -32,7 +32,7 @@ const CardsContainer = ({ category = "Technology" }) => {
   return (
     <>
       <div>{category}</div>
-      <div className="content">
+      <div>
         {data?.map((item) => {
           return <Card {...item} key={item.title.slice(0, 10)} />;
         })}

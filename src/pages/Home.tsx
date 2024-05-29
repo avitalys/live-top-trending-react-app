@@ -23,9 +23,12 @@ const Home = () => {
 
   return (
     <>
-      <div className="content">
+      <div>
         <h2>{greeter(user)}</h2>
-        <h1>Select your interest – dive into the latest!</h1>
+        <h1>
+          <p>Select your interest – </p>
+          <p>dive into the latest!</p>
+        </h1>
         <h3>Choose what you want to read:</h3>
 
         <ScrollMenu

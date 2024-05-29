@@ -1,5 +1,4 @@
 import React from "react";
-import classNames from "classnames";
 import styles from "./index.module.scss";
 import dayjs from "dayjs";
 import { INewsData } from "../../layouts/CardsContainer";
@@ -18,14 +17,9 @@ const Card = ({
   children,
   ...props
 }: ICardProps) => {
-  //   const buttonClasses = classNames(styles["btn"], {
-  //     [styles["btn-primary"]]: primary,
-  //     [styles["btn-outline"]]: outline,
-  //   });
-
   return (
-    <div>
-      <div>
+    <div className={styles["article-card"]}>
+      <div className={styles["image-wrapper"]}>
         {props.image.length > 0 && <img src={props.image} alt="article" />}
       </div>
       <div>
