@@ -21,7 +21,8 @@
   padding: 20px;
 }
 
-h1 p {
+h1 p,
+footer p {
   @include medium {
     display: inline-block;
     white-space: pre;
