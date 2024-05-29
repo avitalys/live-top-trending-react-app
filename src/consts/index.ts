@@ -1,5 +1,5 @@
 export const catogeries = [
-  "Buisness",
+  "Business",
   "Culture",
   "Enviornment",
   "Food",
